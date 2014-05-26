@@ -1,6 +1,6 @@
 OpenVPN Secure Deployment Tool
 =======
-OpenVPN Secure Deployment Tool installs and configures OpenVPN 2.3 with strong security settings without sacrificing performance or speed. Compatible with RHEL/CentOS 6, Debian 7 wheezy, and Ubuntu 12+. Thoroughly tested on Amazon Web Service. Perfect for deploying on a new Virtual Private Server. Pre-made Windows, Linux, and Android client configuration files included. 
+OpenVPN Secure Deployment Tool installs and configures OpenVPN 2.3 with strong security settings without sacrificing performance or speed. Compatible with RHEL/CentOS 6, Debian 7 wheezy, and Ubuntu 12+. Thoroughly tested on Amazon Web Service. Perfect for deploying on a new Virtual Private Server. Pre-made configuration files included for Windows, Linux, and mobile clients. 
 
 ####Features
 * User friendly interface
@@ -9,7 +9,6 @@ OpenVPN Secure Deployment Tool installs and configures OpenVPN 2.3 with strong s
 * Strong TLS cipher suites, forward secrecy
 * 256-bit AES encryption, SHA384 message authentication
 * CA certificate with choice between 4096-bit RSA or ECDSA with any elliptic curve supported by OpenSSL
-* HMAC firewall with TLS auth key
 * Various settings to guard against MITM attacks
 * Strict iptables firewall
 * Easily generate and revoke client certificates
