@@ -167,8 +167,6 @@ def vpn_server_config(settings):
 	subprocess.call(['sed', '-i', '-e', 's/PORT/{0}/'.format(settings['port']), '-e', 's/MODE/{0}/'.format(settings['mode']), config_file])
 	subprocess.call(['sed', '-i', '-e', 's/PRIVATE_SUBNET/{0}/'.format(settings['private_subnet']), '-e', 's/MAX/{0}/'.format(settings['max_clients']), config_file])
 	subprocess.call(['sed', '-i', '-e', 's/SERVER1/{0}/'.format(settings['dns_1']), '-e', 's/SERVER2/{0}/'.format(settings['dns_2']), config_file])
-	if settings['logging'] == 'True':
-		subprocess.call(['sed', '-i', '-e', 's/\/dev\/null/\/var\/log\/openvpn.log/', config_file])
 	subprocess.call(['cp', 'conf/server.conf', '/etc/openvpn/'])
 	if settings['distro'] in ['CentOS', 'Red Hat', 'RHEL']:
 		subprocess.call(['service', 'openvpn', 'start'])
