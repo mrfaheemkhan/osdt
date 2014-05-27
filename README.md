@@ -35,8 +35,9 @@ OpenVPN Secure Deployment Tool installs and configures OpenVPN 2.3 with strong s
 5. A tarball containing files required by the client will be created. Securely transfer it to your client. 
 6. To generate additional client certificates, edit the client section of `settings.ini` and then run `python setup.py --client-gen`.
 7. If connecting with Android clients, OpenVPN Android app does not support fragment options, so make sure you disable it on both the server and client.
-8. To revoke certificates, set revoke_cert in `settings.ini` to the name of the client certificate you wish to revoke, then run `python setup.py --revoke`.
-9. To uninstall and remove all associated files, run `python setup.py --remove`.
+8. Logging is disabled by default. To enable it, edit `/etc/openvpn/server.conf`, then restart the OpenVPN daemon.
+9. To revoke certificates, set revoke_cert in `settings.ini` to the name of the client certificate you wish to revoke, then run `python setup.py --revoke`.
+10. To uninstall and remove all associated files, run `python setup.py --remove`.
 
 #####Known Issues
 Logs may display *Deprecated TLS cipher name* error. Since there is a 256 character limit on line lengths in configuration files, using the IANA naming results in having to drop a few cipher suites. Therefore, you can safely ignore this error message.
