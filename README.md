@@ -41,6 +41,24 @@ Logging is disabled by default. To enable it, edit `/etc/openvpn/server.conf` th
 
 If connecting with Android or iOS clients, OpenVPN Connect app does not support fragment options, so make sure you disable it on the server.
 
+#####Configuring Clients
+
+For Windows clients, you will need to download and install OpenVPN 2.3.X Windows Installer from <a href="http://openvpn.net/index.php/download/community-downloads.html" target="_blank">here</a>. Move your client private key, client certificate, CA certificate, TLS auth key, and client.ovpn file to `C:\Program Files\OpenVPN\config` folder. and run the openvpn-gui program in the bin folder with administrator privileges.
+
+For Linux clients, the simplest method of connecting to an OpenVPN server is with Network Manager. First, you will need to download the OpenVPN plugin for Network Manager and then import your client configuration file.
+
+On RHEL/CentOS/Fedora, do the following:<br>
+`yum -y install NetworkManager-openvpn NetworkManager-openvpn-gnome`<br>
+`service NetworkManager restart`<br>
+
+On Debian/Ubuntu, do the following:<br>
+`apt-get update && apt-get -y install network-manager-openvpn`<br>
+`/etc/init.d/network-manager restart`<br>
+
+Then, use Network Manager to add a new VPN connection and import your client config file. It should automatically reflect your settings in the GUI window. After that, simply connect to the VPN server and everything should be operational.
+
+For Android or iOS clients, download the OpenVPN Connect app and import your .ovpn configuration profile.
+
 #####Known Issues
 Logs may display *Deprecated TLS cipher name* error. Since there is a 256 character limit on line lengths in configuration files, using the IANA naming results in having to drop a few cipher suites. Therefore, you can safely ignore this error message.
 
