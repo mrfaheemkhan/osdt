@@ -7,8 +7,6 @@ OpenVPN Secure Deployment Tool installs and configures OpenVPN 2.3 with strong s
 * Completely configurable
 * Red Hat 6, CentOS 6, Debian wheezy, and Ubuntu 12+ compatibility
 * Strong TLS cipher suites, forward secrecy
-* 256-bit AES encryption, SHA384 message authentication
-* CA certificate with choice between 4096-bit RSA or ECDSA with any elliptic curve supported by OpenSSL
 * Various settings to guard against MITM attacks
 * Strict iptables firewall
 * Easily generate and revoke client certificates
@@ -52,7 +50,7 @@ On RHEL/CentOS/Fedora, do the following:<br>
 `service NetworkManager restart`<br>
 
 On Debian/Ubuntu, do the following:<br>
-`apt-get update && apt-get -y install network-manager-openvpn`<br>
+`apt-get update && apt-get -y install network-manager-openvpn network-manager-openvpn-gnome`<br>
 `/etc/init.d/network-manager restart`<br>
 
 Then, use Network Manager to add a new VPN connection and import your client config file. It should automatically reflect your settings in the GUI window. After that, simply connect to the VPN server and everything should be operational.
