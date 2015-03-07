@@ -8,7 +8,7 @@ iptables -F
 iptables -X
 iptables -t nat -F
 
-# drop everything else
+# set default policy to drop
 iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT DROP
@@ -40,7 +40,6 @@ done
 
 # allow SSH
 iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j ACCEPT
-iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate NEW -j ACCEPT
 
 # allow OpenVPN packets
 iptables -A INPUT -p PROTO --dport VPNPORT -m conntrack --ctstate NEW -j ACCEPT
